@@ -5,7 +5,6 @@ namespace EventConsoleApplication
     class EventData         //parent class in which data member are private 
                             //and their are public get and set method call to achieve Encapsulation
     {
-        public static double x;
         private string name;                            //Field
         public string Name { get; set; }                //property
 
@@ -145,7 +144,7 @@ namespace EventConsoleApplication
         public string DECORATION()
         {
         C:
-            Console.WriteLine("\n\nSelect the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 3000\n2 for 'Gold package' whose cost is Rs. 5000\n3 for 'Platinum package' whose cost is Rs. 10,000/n");
+            Console.WriteLine("\n\nSelect the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 3000\n2 for 'Gold package' whose cost is Rs. 5000\n3 for 'Platinum package' whose cost is Rs. 10,000\n");
             int decor = Convert.ToInt32(Console.ReadLine());
             string decor1;
             switch (decor)
@@ -265,7 +264,7 @@ namespace EventConsoleApplication
         public string DECORATION()
         {
          F:
-            Console.WriteLine("Select the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 30000\n2 for 'Gold package' whose cost is Rs. 18000\n3 for 'Platinum package' whose cost is Rs. 10,000/n");
+            Console.WriteLine("Select the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 30000\n2 for 'Gold package' whose cost is Rs. 18000\n3 for 'Platinum package' whose cost is Rs. 10,000\n");
             int decor = Convert.ToInt32(Console.ReadLine());
             string decor1;
             switch (decor)
@@ -385,7 +384,7 @@ namespace EventConsoleApplication
         public string DECORATION()
         {
          I:
-            Console.WriteLine("\n\nSelect the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 2000\n2 for 'Gold package' whose cost is Rs. 3500\n3 for 'Platinum package' whose cost is Rs. 5000/n");
+            Console.WriteLine("\n\nSelect the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 2000\n2 for 'Gold package' whose cost is Rs. 3500\n3 for 'Platinum package' whose cost is Rs. 5000\n");
             int decor = Convert.ToInt32(Console.ReadLine());
             string decor1;
             switch (decor)
@@ -505,7 +504,7 @@ namespace EventConsoleApplication
         public string DECORATION()
         {
         L:
-            Console.WriteLine("\n\nSelect the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 2000\n2 for 'Gold package' whose cost is Rs. 4000\n3 for 'Platium package' whose cost is Rs. 7000/n");
+            Console.WriteLine("\n\nSelect the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 2000\n2 for 'Gold package' whose cost is Rs. 4000\n3 for 'Platium package' whose cost is Rs. 7000\n");
             int decor = Convert.ToInt32(Console.ReadLine());
             string decor1;
             switch (decor)
