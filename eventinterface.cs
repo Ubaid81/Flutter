@@ -2,6 +2,11 @@ using System;
 
 namespace EventConsoleApplication
 {
+    interface IprintEndMessage //Print specific registration success message for every type of event.
+    {
+        public void Message();
+    }
+
     class EventData         //parent class in which data member are private 
                             //and their are public get and set method call to achieve Encapsulation
     {
@@ -18,7 +23,7 @@ namespace EventConsoleApplication
         public int Nguest { get; set; }
 
         private string venue;
-        public string Venue{ get; set; }
+        public string Venue { get; set; }
 
         private string decoration;
         public string Decoration { get; set; }
@@ -36,7 +41,7 @@ namespace EventConsoleApplication
 
     class Data : EventData
     {
-        public int Guest()     
+        public int Guest()
         {
             try
             {
@@ -92,7 +97,7 @@ namespace EventConsoleApplication
                 Console.WriteLine("ERROR! , Enter Correct format input");
                 Console.WriteLine(e.Message);
                 return "";
-               
+
             }
         }
 
@@ -110,7 +115,7 @@ namespace EventConsoleApplication
     //show example of polymorphism as method name is same but they have different functionality
 
 
-    class Birthday
+    class Birthday : IprintEndMessage
     {
         public string VENUE()
         {
@@ -228,9 +233,15 @@ namespace EventConsoleApplication
                 return exp;
             }
         }
+
+        public void Message()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("Thankyou for visiting us.");
+        }
     }
 
-    class Wedding
+    class Wedding : IprintEndMessage
     {
         public string VENUE()
         {
@@ -263,7 +274,7 @@ namespace EventConsoleApplication
 
         public string DECORATION()
         {
-         F:
+        F:
             Console.WriteLine("Select the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 30000\n2 for 'Gold package' whose cost is Rs. 18000\n3 for 'Platinum package' whose cost is Rs. 10,000\n");
             int decor = Convert.ToInt32(Console.ReadLine());
             string decor1;
@@ -293,7 +304,7 @@ namespace EventConsoleApplication
 
         public string PACKAGE()
         {
-         G:
+        G:
             Console.WriteLine("\n");
             Console.WriteLine("Choose one of the following Catering packages: ");
             Console.WriteLine("Press 1 for Premium (3000 per person)");
@@ -348,13 +359,19 @@ namespace EventConsoleApplication
                 return exp;
             }
         }
+
+        public void Message()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("Thankyou for visiting us.");
+        }
     }
 
-    class Kitty
+    class Kitty : IprintEndMessage
     {
         public string VENUE()
         {
-         H:
+        H:
             Console.WriteLine("\n\nSelect the Venue by entering : \n1 for PALOMINO \n2 for MANDIHILLS \n3 for VENUELOOK\n");
             int venueType = Convert.ToInt32(Console.ReadLine());
             string venue1;
@@ -383,7 +400,7 @@ namespace EventConsoleApplication
 
         public string DECORATION()
         {
-         I:
+        I:
             Console.WriteLine("\n\nSelect the Decoration Package by entering \n1 for 'Silver package' whose cost is Rs. 2000\n2 for 'Gold package' whose cost is Rs. 3500\n3 for 'Platinum package' whose cost is Rs. 5000\n");
             int decor = Convert.ToInt32(Console.ReadLine());
             string decor1;
@@ -413,7 +430,7 @@ namespace EventConsoleApplication
 
         public string PACKAGE()
         {
-         J:
+        J:
             Console.WriteLine("\n");
             Console.WriteLine("Choose one of the following Catering packages: ");
             Console.WriteLine("Press 1 for Premium (800 per person)");
@@ -468,13 +485,19 @@ namespace EventConsoleApplication
                 return exp;
             }
         }
+
+        public void Message()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("Thankyou for visiting us.");
+        }
     }
 
-    class BabyShower
+    class BabyShower : IprintEndMessage
     {
         public string VENUE()
         {
-         K:
+        K:
             Console.WriteLine("\n\nSelect the Venue by entering : \n1 for IMPERIAL BANQUET  \n2 for FORK & SPOON \n3 for THE RITVAAN\n");
             int venueType = Convert.ToInt32(Console.ReadLine());
             string venue1;
@@ -588,13 +611,19 @@ namespace EventConsoleApplication
                 return exp;
             }
         }
+
+        public void Message()
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("Thankyou for visiting us.");
+        }
     }
 
     //Driver class
     class Program
     {
         //A static method display is used to display the event details....
-        static void Display(string name,string schedule,int guest,string package,string venue,string decoration,double expenditure)
+        static void Display(string name, string schedule, int guest, string package, string venue, string decoration, double expenditure)
         {
             // Displaying all the details regarding the event
             Console.WriteLine("-------------------------------------------------------------------------------------------------");
@@ -612,7 +641,7 @@ namespace EventConsoleApplication
             Console.WriteLine("Total expected expenditure for your event is Rs. " + expenditure);
             Console.WriteLine("*************************************************************************************************");
             Console.WriteLine("\n");
-        } 
+        }
 
         static void Main(string[] args)
         {
@@ -692,8 +721,9 @@ namespace EventConsoleApplication
                 }
 
                 Display(obj2.Name, obj2.TimeSlot, obj2.Nguest, obj2.Package, obj2.Venue, obj2.Decoration, obj2.Expenditure);
+                obj3.Message();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("ERROR! , Enter Correct format input");
                 Console.WriteLine(e.Message);
