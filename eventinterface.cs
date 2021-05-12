@@ -9,29 +9,14 @@ namespace EventConsoleApplication
 
     class EventData         //parent class in which data member are private 
                             //and their are public get and set method call to achieve Encapsulation
-    {
-        private string name;                            //Field
+    {            
         public string Name { get; set; }                //property
-
-        private string date;
         public string Date { get; set; }
-
-        private string timeslot;
         public string TimeSlot { get; set; }
-
-        private int nguest;
         public int Nguest { get; set; }
-
-        private string venue;
         public string Venue { get; set; }
-
-        private string decoration;
         public string Decoration { get; set; }
-
-        private string package;
         public string Package { get; set; }
-
-        private double expenditure;
         public double Expenditure { get; set; }
 
 
@@ -54,7 +39,6 @@ namespace EventConsoleApplication
                 Console.WriteLine("ERROR! , Enter Correct format input");
                 Console.WriteLine(e.Message);
                 return 0;
-                Environment.Exit(2);
             }
         }
 
@@ -115,7 +99,7 @@ namespace EventConsoleApplication
     //show example of polymorphism as method name is same but they have different functionality
 
 
-    class Birthday : IprintEndMessage
+    class Birthday : EventData , IprintEndMessage
     {
         public string VENUE()
         {
@@ -128,18 +112,15 @@ namespace EventConsoleApplication
                 case 1:
                     Console.WriteLine("\nYou have selected 'ROYAL OCCASION BANQUE' venue for your Birthday Celebration");
                     venue1 = "ROYAL OCCASION BANQUE";
-                    return venue1;
-                    break;
+                    return venue1;                
                 case 2:
                     Console.WriteLine("\nYou have selected 'PASCAlS THE BRITISH PUB' venue for your Birthday Celebration");
                     venue1 = "PASCAlS THE BRITISH PUB";
                     return venue1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'MANDARIN TRAIL' venue for your Birthday Celebration");
                     venue1 = "MANDARIN TRAIL";
                     return venue1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting Venue. Hence, Try Again!");
                     goto B;
@@ -158,17 +139,14 @@ namespace EventConsoleApplication
                     Console.WriteLine("\nYou have selected the 'Silver Package' for your Birthday Celebration");
                     decor1 = "Silver Package";
                     return decor1;
-                    break;
                 case 2:
                     Console.WriteLine("\nYou have selected 'Gold Package' for your Birthday Celebration");
                     decor1 = "Gold Package";
                     return decor1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'Platinum Package' for your Birthday Celebration");
                     decor1 = "Platinum Package";
                     return decor1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting decoration package. \nHence, Try Again!");
                     goto C;
@@ -241,12 +219,12 @@ namespace EventConsoleApplication
         }
     }
 
-    class Wedding : IprintEndMessage
+    class Wedding : EventData, IprintEndMessage
     {
         public string VENUE()
         {
         E:
-            Console.WriteLine("\n\nSelect the Venue by entering : \n1 for VILA BALBIANO  \n2 BLACKBERRY FARM \n3 for FAENA HOTEL\n");
+            Console.WriteLine("\n\nSelect the Venue by entering : \n1 for VILA BALBIANO  \n2 for BLACKBERRY FARM \n3 for FAENA HOTEL\n");
             int venueType = Convert.ToInt32(Console.ReadLine());
             string venue1;
             switch (venueType)
@@ -255,17 +233,14 @@ namespace EventConsoleApplication
                     Console.WriteLine("\nYou have selected 'VILA BALBIANO' venue for your Wedding");
                     venue1 = "VILA BALBIANO";
                     return venue1;
-                    break;
                 case 2:
                     Console.WriteLine("\nYou have selected 'BLACKBERRY FARM' venue for your Wedding");
                     venue1 = "BLACKBERRY FARM";
                     return venue1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'FAENA HOTEL' venue for your Wedding");
                     venue1 = "FAENA HOTEL";
                     return venue1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting Venue. Hence, Try Again!");
                     goto E;
@@ -284,17 +259,14 @@ namespace EventConsoleApplication
                     Console.WriteLine("\nYou have selected the 'Silver Package' for your Wedding");
                     decor1 = "Silver Package";
                     return decor1;
-                    break;
                 case 2:
                     Console.WriteLine("\nYou have selected 'Gold Package' for your Wedding");
                     decor1 = "Gold Package";
                     return decor1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'Platinum Package' for your Wedding");
                     decor1 = "Platinum Package";
                     return decor1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting decoration package.\nHence, Try Again!");
                     goto F;
@@ -367,7 +339,7 @@ namespace EventConsoleApplication
         }
     }
 
-    class Kitty : IprintEndMessage
+    class Kitty : EventData , IprintEndMessage
     {
         public string VENUE()
         {
@@ -381,17 +353,14 @@ namespace EventConsoleApplication
                     Console.WriteLine("\nYou have selected 'PALOMINO' venue for your Kitty Party");
                     venue1 = "PALOMINO";
                     return venue1;
-                    break;
                 case 2:
                     Console.WriteLine("\nYou have selected 'MANDIHILLS' venue for your Kitty Party");
                     venue1 = "MANDIHILLS";
                     return venue1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'VENUELOOK' venue for your Kitty Party");
                     venue1 = "VENUELOOK";
                     return venue1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting Venue. Hence, Try Again!");
                     goto H;
@@ -410,17 +379,14 @@ namespace EventConsoleApplication
                     Console.WriteLine("\nYou have selected the 'Silver Package' for your Kitty Party");
                     decor1 = "Silver Package";
                     return decor1;
-                    break;
                 case 2:
                     Console.WriteLine("\nYou have selected 'Gold Package' for your Kitty Party");
                     decor1 = "Gold Package";
                     return decor1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'Platinum Package' for your Kitty Party");
                     decor1 = "Platinum Package";
                     return decor1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting decoration package. Hence, Try Again!");
                     goto I;
@@ -493,7 +459,7 @@ namespace EventConsoleApplication
         }
     }
 
-    class BabyShower : IprintEndMessage
+    class BabyShower : EventData , IprintEndMessage
     {
         public string VENUE()
         {
@@ -507,17 +473,14 @@ namespace EventConsoleApplication
                     Console.WriteLine("\nYou have selected 'IMPERIAL BANQUET' venue for Baby Shower");
                     venue1 = "IMPERIAL BANQUET";
                     return venue1;
-                    break;
                 case 2:
                     Console.WriteLine("\nYou have selected 'FORK & SPOON' venue for Baby Shower");
                     venue1 = "FORK & SPOON";
                     return venue1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'THE RITVAAN' venue for Baby Shower");
                     venue1 = "THE RITVAAN";
                     return venue1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting Venue. Hence, Try Again!");
                     goto K;
@@ -536,17 +499,14 @@ namespace EventConsoleApplication
                     Console.WriteLine("\nYou have selected the 'Silver Package' for your Birthday Celebration");
                     decor1 = "Silver Package";
                     return decor1;
-                    break;
                 case 2:
                     Console.WriteLine("\nYou have selected 'Gold Package' for your Birthday Celebration");
                     decor1 = "Gold Package";
                     return decor1;
-                    break;
                 case 3:
                     Console.WriteLine("\nYou have selected 'Platinum Package' for your Birthday Celebration");
                     decor1 = "Platinum Package";
                     return decor1;
-                    break;
                 default:
                     Console.WriteLine("\nPlease Enter as directed option for selecting decoration package. Hence, Try Again!");
                     goto L;
